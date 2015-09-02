@@ -1,9 +1,5 @@
-#
-# @author: James Hill
-# @description: Nginx webserver with NodeJS bundled
-#
+FROM jhchill666/nginx
 
-FROM nginx
 MAINTAINER James Hill <jhill@amelco.co.uk>
 
 # Install Node.js
