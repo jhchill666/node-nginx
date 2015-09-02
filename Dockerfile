@@ -3,11 +3,8 @@ FROM jhchill666/nginx
 MAINTAINER James Hill <jhill@amelco.co.uk>
 
 # Install Node.js
-RUN \
-  apt-get update && \
-  apt-get install -y curl && \
-  curl -sL https://deb.nodesource.com/setup | bash - && \
-  apt-get install -y nodejs && \
-  apt-get purge -y curl apt-transport-https && \
-  apt-get autoremove -y && \
-  apt-get clean all
+RUN apt-get update && \
+	apt-get install -y nginx git wget tar gzip build-essential && \
+	apt-get -q -y install curl nodejs npm && \
+	apt-get clean && \
+	rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
